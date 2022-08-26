@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    width: 170,
+    width: 120,
     margin: 10,
   },
   image: {
     width: "100%",
-    height: 170,
+    height: 120,
   },
   title: {
     color: "grey",
