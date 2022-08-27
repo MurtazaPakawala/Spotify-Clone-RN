@@ -11,7 +11,6 @@ export type AlbumProps = {
 const AlbumComponent = (props: AlbumProps) => {
   const navigation = useNavigation();
   const onPress = () => {
-    console.warn(`album is ${props.album.id}`);
     navigation.navigate("AlbumScreen");
   };
   return (
