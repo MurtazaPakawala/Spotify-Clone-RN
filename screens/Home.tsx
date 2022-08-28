@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, SafeAreaView } from "react-native";
 import React from "react";
 import Album from "../components/Album";
 import AlbumCategory from "../components/AlbumCategory";
@@ -6,7 +6,7 @@ import albumCategoryData from "../data/albumCategories";
 
 const Home = () => {
   return (
-    <View>
+    <SafeAreaView>
       <FlatList
         data={albumCategoryData}
         renderItem={({ item }) => (
@@ -14,7 +14,7 @@ const Home = () => {
         )}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

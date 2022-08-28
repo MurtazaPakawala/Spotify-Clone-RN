@@ -70,14 +70,28 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
       />
-      <Stack.Screen name="AlbumScreen" component={AlbumScreen} />
+
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
 }
-
+const HomeStack = createNativeStackNavigator<RootStackParamList>();
+const HomeNavigator = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen
+      name="Home"
+      component={Home}
+      options={{ headerShown: false }}
+    />
+    <HomeStack.Screen
+      name="AlbumScreen"
+      component={AlbumScreen}
+      options={{ headerShown: false }}
+    />
+  </HomeStack.Navigator>
+);
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
@@ -96,9 +110,10 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Home"
-        component={Home}
+        component={HomeNavigator}
         options={{
           title: "Home",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Entypo
               name="home"

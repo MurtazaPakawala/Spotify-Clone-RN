@@ -1,6 +1,7 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, SafeAreaView } from "react-native";
 import React from "react";
 import SongList from "../components/SongListItem";
+import AlbumHeader from "../components/AlbumHeader";
 
 const data = {
   id: "1",
@@ -50,12 +51,15 @@ const data = {
 };
 const AlbumScreen = () => {
   return (
-    <View>
+    <SafeAreaView>
       <FlatList
         data={data.songs}
         renderItem={({ item }) => <SongList song={item} />}
+        keyExtractor={(item) => item.id}
+        ListHeaderComponent={({ item }) => <AlbumHeader album={data} />}
+        showsVerticalScrollIndicator={false}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

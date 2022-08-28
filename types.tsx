@@ -20,6 +20,7 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
+  Home: undefined;
   AlbumScreen: undefined;
 };
 
@@ -45,6 +46,10 @@ export type Album = {
   id: string;
   imgUrl: string;
   artistHeadline: string;
+  name: string;
+  numberOfLikes: string;
+  by: string;
+  songs: Array<Song>;
 };
 
 export type Song = {
