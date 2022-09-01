@@ -13,6 +13,7 @@ const Home = () => {
           <AlbumCategory title={item.title} albums={item.albums} />
         )}
         keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   );
